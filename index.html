@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TextOrigin — Human or AI text detector</title>
+  <!-- Correct Flask static linking -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="{{ url_for('index') }}" class="logo">
+      <span class="glass"></span><span>Text<strong>Origin</strong></span>
+    </a>
+    <nav class="nav-links">
+  <a href="{{ url_for('index') }}">Home</a>
+  <a href="{{ url_for('about') }}">About</a>
+  <a href="{{ url_for('contact') }}">Contact</a>
+</nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1>Is your text Human or AI?</h1>
+    <p class="subtitle">Paste your text below and discover its origin instantly.</p>
+    <textarea id="userText" placeholder="Paste text here…"></textarea>
+    <div class="controls">
+      <button id="checkBtn" class="btn">Check</button>
+      <button id="clearBtn" class="btn secondary">Clear</button>
+    </div>
+    <div id="result" class="card" style="display:none;">
+  <div class="percent" id="scoreText">Human: 0% | AI: 0%</div>
+  <div class="meter"><i id="meterFill"></i></div>
+  <ul id="breakdown" class="metrics">
+    <!-- JS will populate these -->
+  </ul>
+</div>
+  </section>
+</main>
+
+<footer>
+  <div>© TextOrigin</div>
+  <div class="social">
+    <a href="#">GitHub</a>
+    <a href="#">LinkedIn</a>
+    <a href="mailto:hello@textorigin.example">Email</a>
+  </div>
+</footer>
+
+<!-- Correct Flask static linking -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
